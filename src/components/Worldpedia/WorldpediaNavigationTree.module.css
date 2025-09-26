@@ -1,0 +1,132 @@
+/* Contenedor principal del árbol */
+.treeContainer {
+  padding: 10px;
+  background-color: #2a2d30;
+  color: #d4d4d4;
+  height: 100%;
+  overflow-y: auto;
+  font-family: sans-serif;
+}
+
+/* Acciones en la raíz del árbol */
+.rootActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  background-color: #3a3d40;
+  border-radius: 4px;
+}
+
+.rootActions span {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Listas del árbol */
+.treeRoot,
+.nestedTree {
+  list-style: none;
+  padding-left: 0;
+}
+
+.nestedTree {
+  padding-left: 20px;
+  border-left: 1px solid #444;
+  margin-left: 10px;
+}
+
+/* Contenedor de cada item (li) */
+.treeItemContainer {
+  margin-bottom: 2px;
+}
+
+/* Div principal de un item */
+.treeItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.treeItem.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.treeItem.dropOver {
+  background-color: #4caf50;
+}
+
+/* Parte izquierda del item (handle, icono y título) */
+.titleContainer {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  /* Quitamos el cursor: grab de aquí */
+}
+
+.dragHandle {
+  cursor: grab;
+  padding: 0 8px;
+  color: #888;
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.icon {
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+.titleText {
+  cursor: pointer;
+  user-select: none;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.titleInput {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  border: 1px solid #007bff;
+  border-radius: 2px;
+  padding: 2px 4px;
+  width: 100%;
+}
+
+/* Acciones del item (se muestran al hacer hover) */
+.itemActions {
+  display: none;
+  align-items: center;
+}
+
+.treeItem:hover .itemActions {
+  display: flex;
+}
+
+.actionButton {
+  background: #444;
+  border: none;
+  color: #d4d4d4;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 5px;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.actionButton:hover {
+  background: #555;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
+  color: white;
+}

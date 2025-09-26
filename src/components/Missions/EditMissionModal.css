@@ -1,0 +1,38 @@
+.mission-modal .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.mission-modal .form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.mission-modal .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.mission-modal .form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--secondary-text-color);
+}
+
+.mission-modal .form-group input,
+.mission-modal .form-group textarea,
+.mission-modal .form-group select {
+    width: 100%;
+}
+
+.mission-modal .searchable-multi-selector-container {
+    margin-bottom: 15px;
+}
+
+.mission-modal .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}

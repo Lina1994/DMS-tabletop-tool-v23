@@ -1,0 +1,115 @@
+.editorContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  background-color: #1e1e1e; /* Fondo oscuro para el contenedor */
+  color: #d4d4d4;
+}
+
+.editorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.editorHeader h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.saveButton {
+  padding: 8px 16px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.saveButton:hover {
+  background-color: #0056b3;
+}
+
+.saveButton:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* --- Estilos para ReactQuill --- */
+.quillEditor {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  /* overflow: hidden; /* Para que el scroll se quede dentro - Eliminado para evitar que los tooltips se corten */
+}
+
+/* Personalización de la barra de herramientas */
+.quillEditor .ql-toolbar {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.quillEditor .ql-toolbar .ql-stroke {
+  stroke: #d4d4d4;
+}
+.quillEditor .ql-toolbar .ql-fill {
+  fill: #d4d4d4;
+}
+.quillEditor .ql-toolbar .ql-picker-label {
+  color: #d4d4d4;
+}
+
+/* Estilo para los botones personalizados */
+.quillEditor .ql-toolbar .ql-internalLink,
+.quillEditor .ql-toolbar .ql-externalLink {
+  width: auto !important;
+  padding: 0 8px;
+}
+
+/* Contenedor del editor */
+.quillEditor .ql-container {
+  flex-grow: 1;
+  background-color: #252526;
+  border: 1px solid #444;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow-y: auto;
+  font-size: 16px;
+}
+
+.quillEditor .ql-editor {
+  color: #d4d4d4;
+}
+
+.placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+/* Asegura que los grupos de formatos se muestren correctamente */
+.quillEditor .ql-toolbar .ql-formats {
+  display: inline-block;
+  margin-right: 8px; /* Espacio entre grupos de formatos */
+  vertical-align: middle; /* Alineación vertical */
+}
+
+/* Asegura que los botones personalizados no se desborden */
+.quillEditor .ql-toolbar button.ql-internalLink,
+.quillEditor .ql-toolbar button.ql-externalLink {
+  display: inline-block; /* Asegura que se comporten como bloques en línea */
+  white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+  vertical-align: middle; /* Alineación vertical */
+}

@@ -1,0 +1,158 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background: var(--background-color-dark);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    border: 1px solid var(--border-color-light);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    color: var(--text-color-light);
+  }
+  
+  .modalTitle {
+    margin-top: 0;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .generatorControls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    margin-bottom: 1rem;
+    background-color: var(--background-color-light);
+    border-radius: 6px;
+  }
+
+  .label {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .filterSelect {
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color-dark);
+    background-color: var(--background-color-dark);
+    color: var(--text-color-light);
+    font-size: 1rem;
+  }
+  
+  .missionDetails {
+    margin: 1.5rem 0;
+  }
+  
+  .missionTitle {
+    color: var(--accent-color-one);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .missionDescription {
+    background-color: var(--background-color-light);
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color-dark);
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  .descriptionLine {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.6;
+  }
+
+  .noMissionMessage {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 1.5rem 0;
+    background-color: var(--background-color-light);
+    border: 1px dashed var(--border-color-light);
+    border-radius: 4px;
+  }
+
+  .noMissionMessage p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+  
+  .modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .button:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+
+  .button:disabled {
+    background-color: var(--border-color-dark);
+    color: var(--text-color-dark);
+    cursor: not-allowed;
+  }
+  
+  .saveButton {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .saveButton:hover:not(:disabled) {
+    background-color: var(--primary-color-dark);
+  }
+  
+  .regenerateButton {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  .regenerateButton:hover {
+    background-color: var(--secondary-color-dark);
+  }
+
+  .configureButton {
+    background-color: var(--accent-color-two);
+    color: white;
+  }
+
+  .configureButton:hover {
+    background-color: #a75b00;
+  }
+  
+  .closeButton {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+    border: 1px solid var(--border-color-light);
+  }
+  
+  .closeButton:hover {
+    background-color: var(--border-color-light);
+  }

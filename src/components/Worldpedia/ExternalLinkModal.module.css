@@ -1,0 +1,122 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.modalContent {
+  background: #2c2c2c;
+  color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #f0f0f0;
+  cursor: pointer;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Prevent body scroll */
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #444;
+  margin-bottom: 10px;
+}
+
+.tabButton {
+  padding: 10px 15px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #ccc;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px; /* Overlap with container border */
+}
+
+.tabButton:hover {
+  background-color: #3a3a3a;
+}
+
+.tabButton.active {
+  color: #fff;
+  border-bottom-color: #007bff; /* Highlight color */
+}
+
+.tabContent {
+  overflow-y: auto;
+  padding-right: 10px; /* For scrollbar */
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkList li {
+  padding: 12px 15px;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.linkList li:hover {
+  background-color: #3a3a3a;
+}
+
+.linkList li:last-child {
+  border-bottom: none;
+}
+
+.errorText {
+  color: #ff4d4d;
+}
+
+.searchContainer {
+  padding: 5px 0 15px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: #1e1e1e;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: #f0f0f0;
+  font-size: 1rem;
+}

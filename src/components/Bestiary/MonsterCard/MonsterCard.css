@@ -1,0 +1,67 @@
+.monster-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.monster-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.monster-card-image-container {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.monster-card-image, .monster-card-image-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.monster-card-image-placeholder {
+  background-color: #e0e0e0;
+}
+
+.monster-card-token {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  object-fit: cover; /* Ensures token image fits the circle */
+}
+
+.monster-info {
+  flex-grow: 1;
+}
+
+.monster-card h3 {
+  color: #333;
+  margin: 0 0 5px 0;
+  font-size: 1.1em;
+}
+
+.monster-card p {
+  margin: 0;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.monster-card strong {
+  color: #222;
+}

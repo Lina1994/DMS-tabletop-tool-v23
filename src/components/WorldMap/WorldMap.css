@@ -1,0 +1,48 @@
+.world-map-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+
+.world-map-controls {
+    margin-bottom: 20px;
+}
+
+.world-map-controls button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.world-map-content {
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+.world-map-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.marker {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.marker-info {
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    transform: translate(-50%, -110%);
+    z-index: 1;
+}

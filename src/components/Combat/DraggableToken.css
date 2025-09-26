@@ -1,0 +1,135 @@
+.draggable-token {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: grab;
+  z-index: 2; /* Ensure tokens are above the click interceptor */
+  /* width is now set dynamically for tokens on the map */
+  margin-bottom: 0; /* Adjusted for new name positioning */
+}
+
+.draggable-token.dragging {
+  cursor: grabbing;
+  z-index: 1000;
+}
+
+/* New container for token visual and names */
+.token-visual-container {
+  position: relative; /* To position names relative to this container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Container for the visual part of the token (circle) */
+.token-image,
+.token-color-fill {
+  width: 100%; /* Fill the parent .draggable-token div */
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* The actual size is now controlled by the inline style on .draggable-token */
+}
+
+/* This styles the actual image inside the circle */
+.token-image {
+  object-fit: cover; /* Ensures the image covers the circle without distortion */
+}
+
+/* Styles for the name at the bottom */
+.token-name-bottom {
+  position: absolute;
+  bottom: -12px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%); /* Center the text */
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background for better readability */
+  color: white;
+  padding: 2px 6px; /* Slightly more padding */
+  border-radius: 4px;
+  font-size: 5px;
+  white-space: normal; /* Allow text to wrap */
+  text-align: center;
+  max-width: 150%; /* Allow it to extend beyond token width if needed */
+  word-wrap: break-word; /* Break long words */
+  box-sizing: border-box; /* Include padding in width */
+  z-index: 3; /* Ensure it's above other elements if needed */
+}
+
+/* Styles for the name at the top, rotated */
+.token-name-top {
+  position: absolute;
+  top: -12px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg); /* Center and rotate */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 5px;
+  white-space: normal;
+  text-align: center;
+  max-width: 150%;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+/* Styles for tokens in the sidebar */
+.token-sidebar .draggable-token .token-name-bottom {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none; /* Remove transform for sidebar */
+    background-color: transparent;
+    color: #333;
+    margin-top: 5px;
+    padding: 0;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    width: auto;
+    max-width: none; /* Remove max-width constraint */
+}
+
+/* Hide the top name in the sidebar */
+.token-sidebar .draggable-token .token-name-top {
+    display: none;
+}
+
+/* Specific border colors for character and monster types */
+.draggable-token.character .token-image,
+.draggable-token.character .token-color-fill {
+  border-color: #4a90e2; /* Blue border for characters */
+}
+
+.draggable-token.monster .token-image,
+.draggable-token.monster .token-color-fill {
+  border-color: #d0021b; /* Red border for monsters */
+}
+
+/* Default size for tokens in the sidebar (when not on the map) */
+.token-sidebar .draggable-token {
+    width: 60px;
+    height: 60px;
+}
+
+/* Highlighting for current turn and manually selected tokens */
+.draggable-token.current-turn .token-image,
+.draggable-token.current-turn .token-color-fill {
+  border: 3px solid #FFD700; /* Gold border for current turn */
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+}
+
+.draggable-token.manually-selected .token-image,
+.draggable-token.manually-selected .token-color-fill {
+  border: 3px solid #00BFFF; /* Deep Sky Blue border for manually selected */
+  box-shadow: 0 0 8px rgba(0, 191, 255, 0.7);
+}
